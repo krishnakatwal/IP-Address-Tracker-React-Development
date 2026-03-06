@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
 import L from "leaflet";
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
@@ -35,7 +35,7 @@ function Map({ data }) {
         attribution="&copy; OpenStreetMap contributors"
       />
       {/* Use the custom icon */}
-      <Marker position={[lat, lng]} icon={customIcon}></Marker>
+      <Marker position={[lat, lng]} icon={customIcon} />
     </MapContainer>
   );
 }
