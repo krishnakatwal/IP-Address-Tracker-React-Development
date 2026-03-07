@@ -8,9 +8,8 @@ function useFetch(url) {
   useEffect(() => {
     if (!url) {
       setLoading(false);
-      return;//don't fetch if url is not given
+      return; //don't fetch if url is not given
     }
-      
 
     const controller = new AbortController(); //for clean up
 
@@ -20,19 +19,18 @@ function useFetch(url) {
 
     async function fetchData() {
       try {
-        
-
         const response = await fetch(url, {
           signal: controller.signal,
         });
 
-       if (!response.ok) {
-  throw new Error(`Error ${response.status}: ${response.statusText}`);
-}
+        if (!response.ok) {
+          throw new Error(`Error ${response.status}: ${response.statusText}`);
+        }
 
         const result = await response.json();
         // console.log("API data:", result);
         setData(result);
+        
       } catch (error) {
         if (error.name !== "AbortError") {
           setError(error);
@@ -43,12 +41,10 @@ function useFetch(url) {
     }
     fetchData();
 
-
     //clean function
-    return () =>
-      controller.abort();
-    }, [url]);
-    
+    return () => controller.abort();
+  }, [url]);
+
   return { data, loading, error };
 }
 export default useFetch;

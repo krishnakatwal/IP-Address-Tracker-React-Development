@@ -19,6 +19,13 @@ const customIcon = L.icon({
   iconAnchor: [20, 40],
 });
 
+
+function Recenter({ lat, lng }) {
+  const map = useMap();
+  map.setView([lat, lng], map.getZoom());
+  return null;
+}
+
 function Map({ data }) {
   const lat = data?.location?.lat || 51.505;
   const lng = data?.location?.lng || -0.09;
@@ -36,6 +43,7 @@ function Map({ data }) {
       />
       {/* Use the custom icon */}
       <Marker position={[lat, lng]} icon={customIcon} />
+      <Recenter lat={lat} lng={lng} />
     </MapContainer>
   );
 }

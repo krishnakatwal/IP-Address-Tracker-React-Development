@@ -9,11 +9,11 @@ import "leaflet/dist/leaflet.css";
 
 function App() {
   return (
-    <>
+    <div>
       <DisplayIpAddress />
       <SearchIpAddress />
       <Map />
-    </>
+    </div>
   );
 }
 
