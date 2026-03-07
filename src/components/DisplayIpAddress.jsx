@@ -12,7 +12,7 @@ function DisplayIpAddress({ data }) {
       <div className="md:px-6 md:border-r border-gray-200">
         {/* IP Address */}
         <p>
-          <strong>IP:</strong> {data.ip}
+          <strong>IP</strong> {data.ip}
         </p>
       </div>
 
@@ -26,13 +26,13 @@ function DisplayIpAddress({ data }) {
       {/* Timezone */}
       <div className="md:px-6 md:border-r border-gray-200">
         <p>
-          <strong>Timezone:</strong> {data.location.timezone}
+          <strong>Timezone</strong> {data.location.timezone}
         </p>
       </div>
       {/* ISP */}
       <div className="md:px-6 md:border-r border-gray-200">
         <p>
-          <strong>ISP:</strong> {data.isp}
+          <strong>ISP</strong> {data.isp}
         </p>
       </div>
     </div>

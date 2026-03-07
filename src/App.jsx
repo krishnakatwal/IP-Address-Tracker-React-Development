@@ -10,9 +10,9 @@ import "leaflet/dist/leaflet.css";
 function App() {
   return (
     <div>
-      <DisplayIpAddress />
+      {/* <DisplayIpAddress /> */}
       <SearchIpAddress />
-      <Map />
+      {/* <Map /> */}
     </div>
   );
 }
