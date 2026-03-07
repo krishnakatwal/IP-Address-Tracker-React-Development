@@ -1,4 +1,4 @@
-// import { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import arrowIcon from "../assets/images/icon-arrow.svg";
 import DisplayIpAddress from "./DisplayIpAddress";
 import Map from "./Map";
@@ -48,7 +48,7 @@ function SearchIpAddress() {
     <div className="flex flex-col min-h-screen">
       {/* Header Section */}
       <div className="relative z-20 bg-[url('/src/assets/images/pattern-bg-desktop.png')] bg-cover bg-center min-h-[280px] pt-[30px] px-6 text-center">
-        <h1 className="text-3xl font-semibold">IP Address Tracker</h1>
+        <h1 className="text-white text-3xl font-semibold">IP Address Tracker</h1>
 
         {/* Input Form */}
         <form
@@ -85,16 +85,16 @@ function SearchIpAddress() {
 
         {/* Display IP Card */}
         {data && (
-          <div className="absolute top-[230px] left-1/2 transform -translate-x-1/2 z-20 w-[90%] max-w-[1100px]">
+          <div className="absolute top-[172px] left-1/2 transform -translate-x-1/2 z-20 w-[90%] max-w-[1100px]">
             <DisplayIpAddress data={data} />
           </div>
         )}
       </div>
 
       {/* Map Section */}
-      <div className="relative flex-1 w-full mt-[120px]">
+      <div className="relative flex-1 w-full mt-0">
         <div className="h-[65vh] w-full">
-          <Map data={data} defaultLocation={defaultLocation} />
+       <Map data={data} />
         </div>
       </div>
     </div>

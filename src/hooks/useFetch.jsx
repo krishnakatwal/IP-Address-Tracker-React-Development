@@ -12,10 +12,10 @@ function useFetch(url) {
     }
 
     const controller = new AbortController(); //for clean up
-
+    setLoading(true);
     setData(null); //Reset data on new fetch
     setError(null); //Reset error on new fetch
-    setLoading(true);
+  
 
     async function fetchData() {
       try {
